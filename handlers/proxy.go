@@ -87,7 +87,7 @@ func MakeProxy(functionNamespace string) http.HandlerFunc {
 
 			responseBody, _ := ioutil.ReadAll(response.Body)
 
-			writeHead(service, http.StatusOK, w)
+			writeHead(service, response.StatusCode, w)
 			w.Write(responseBody)
 
 		}
